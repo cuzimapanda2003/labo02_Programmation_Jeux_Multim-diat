@@ -1,24 +1,43 @@
 [gd_scene format=3 uid="uid://c766fl78o0cjk"]
 
+[ext_resource type="Texture2D" uid="uid://b5fk5bv57byfj" path="res://assets/sprites/fond_1_ciel.png" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://co806t5p15df4" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="Texture2D" uid="uid://bbujtkmgdjava" path="res://assets/sprites/fond_2_montagnes.png" id="2_71j4m"]
+[ext_resource type="Texture2D" uid="uid://g611vilyl7yi" path="res://assets/sprites/fond_3_collines.png" id="3_qfnet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
 size = Vector2(600, 18)
 
 [node name="World" type="Node2D" unique_id=1425400090]
 
+[node name="ciel" type="Parallax2D" parent="." unique_id=583780352]
+
+[node name="Sprite2D" type="Sprite2D" parent="ciel" unique_id=1798069143]
+texture = ExtResource("1_k0juu")
+
+[node name="montagne" type="Parallax2D" parent="." unique_id=1815047660]
+
+[node name="Sprite2D" type="Sprite2D" parent="montagne" unique_id=739636277]
+texture = ExtResource("2_71j4m")
+
+[node name="gazon" type="Parallax2D" parent="." unique_id=1974522798]
+
+[node name="Sprite2D" type="Sprite2D" parent="gazon" unique_id=581920726]
+texture = ExtResource("3_qfnet")
+
 [node name="Player" parent="." unique_id=646363344 instance=ExtResource("1_nnsk1")]
+position = Vector2(1, 97)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=529926457]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=68184011]
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=754875678]
-offset_left = -54.0
-offset_top = 5.0
-offset_right = 546.0
-offset_bottom = 23.0
+offset_left = -242.0
+offset_top = 102.0
+offset_right = 358.0
+offset_bottom = 120.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=834190726]
-position = Vector2(246, 14)
+position = Vector2(58, 111)
 shape = SubResource("RectangleShape2D_f3sb7")
