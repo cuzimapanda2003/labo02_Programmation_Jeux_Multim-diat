@@ -7,6 +7,7 @@ extends BaseState
 func enter() -> void:
 	player.velocity.y = player.JUMP_VELOCITY
 	sprite.play("idle")
+	
 
 func physics_update(_delta: float) -> void:
 
